@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "akvo-react-form/dist/index.css"; /* REQUIRED */
+import { Webform } from "akvo-react-form";
+import * as forms from "./example.json";
 
-function App() {
+const App = () => {
+  const onChange = ({ current, values, progress }) => {
+    console.log(progress);
+  };
+  const onFinish = (values) => {
+    console.log(values);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="full-width">
+      <Webform forms={forms.default} onChange={onChange} onFinish={onFinish} />
     </div>
   );
-}
+};
 
 export default App;
