@@ -52,6 +52,7 @@
     "cordova-browser": "^6.0.0",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-local-notification": "^0.9.0-beta.2"
   },
   "cordova": {
@@ -60,7 +61,10 @@
       "android"
     ],
     "plugins": {
-      "cordova-plugin-local-notification": {}
+      "cordova-plugin-local-notification": {},
+      "cordova-plugin-geolocation": {
+        "GPS_REQUIRED": "true"
+      }
     }
   }
 }
